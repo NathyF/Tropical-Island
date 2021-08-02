@@ -1,0 +1,401 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+img {
+    max-width: 100%;
+  }
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6  {
+  font-weight: 700;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    z-index: 999;
+  }
+
+  .menu-header {
+    display: none;
+  }
+
+  h2, h3 {
+    text-transform: uppercase;
+  }
+
+  header .logo {
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .buttons-list {
+    position: absolute;
+    top: -0.5em;
+    right: 1em;
+    width: 60px;
+    height: 60px;
+    background: url(https://i.ibb.co/HrfVRcx/menu.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.3s ease-in 0.35s;
+  }
+
+  .buttons-list.active {
+    background: url(https://i.ibb.co/rt3HybH/close.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  .content {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+
+  .content.active {
+    right: 100%;
+  }
+
+  .content video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #78c3fb;
+    mix-blend-mode: overlay;
+  }
+
+  .text-content {
+    position: relative;
+    z-index: 10;
+  }
+
+  .text-content h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1em;
+  }
+
+  .text-content h3 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1em;
+  }
+
+  .text-content p {
+    font-size: 1.1em;
+    color: #fff;
+    margin: 1.25em 0;
+    font-weight: 400;
+  }
+
+  .text-content a {
+    display: inline-block;
+    font-size: 1rem;
+    background: #fff;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #111;
+    letter-spacing: 2px;
+    transition: letter-spacing 0.2s ease-in;
+  }
+
+  .text-content a:hover {
+    letter-spacing: 6px;
+  }
+
+  .social {
+    position: absolute;
+    z-index: 10;
+    bottom: 1.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .social li a {
+    display: inline-block;
+    filter: invert(1);
+    transform: scale(0.5);
+    transition: transform 0.3s ease-in;
+  }
+
+  .social li a:hover {
+    transform: scale(0.5) translateY(-0.94em);
+  }
+
+  .social li .insta-icon, .social li .twitter-icon{
+    margin-left: 1.25em;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .menu ul li a {
+    font-size: 1.5rem;
+    color: #111;
+  }
+
+ .button {
+    margin-top: 2.5em;
+ }
+
+ .menu .buttons-list.active {
+  filter: invert(1);
+ }
+
+ .menu .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 0.65rem;
+  width: 100%;
+  color: rgb(119, 118, 118)
+ }
+
+@media(min-width: 1024px) {
+  .text-content p {
+    max-width: 700px;
+  }
+
+  .menu-header {
+    display: block;
+  }
+
+  .menu-header ul {
+    display: flex;
+  }
+
+  .button {
+    color: #afaeae;
+    font-size: 1.5rem;
+  }
+
+  .button {
+    margin-left: 1.5em;
+  }
+
+  .buttons-list {
+    display: none;
+  }
+
+  .menu-header ul li a {
+    transition: 450ms;
+  }
+
+  .menu-header ul li a:hover{
+    color: white;
+    border-bottom: 3px solid;
+    animation: border 0.5s ease-in-out;
+    font-size: 26px;
+    letter-spacing: 2.5px;
+  }
+
+  .social a img {
+    animation: color 20s ease-in-out infinite;
+  }
+
+  @keyframes color {
+
+    0% {color: red;}
+    33.3% { color: #0f0;}
+    66.7% { color: #00f;}
+  }
+
+  @keyframes border {
+    0% {padding-bottom: 0.5rem;}
+    33.3% {padding-bottom: 0.3rem;}
+    66.7% {padding-bottom: 0;}
+  }
+  
+
+}
+
+ @media(min-width: 768px) and (max-width: 1024px) {
+  header {
+    padding: 3em;
+  }
+
+  .content {
+    padding: 3em;
+  }
+
+  .text-content p {
+    max-width: 650px;
+    font-size: 1.3rem;
+  }
+
+  .text-content h2 {
+    font-size: 5rem;
+  }
+
+  .text-content h3 {
+    font-size: 4rem;
+  }
+
+  .text-content a {
+    font-size: 1.5rem;
+  }
+
+  .buttons-list {
+    top: 2.15em;
+  }
+
+  .menu ul li a {
+    font-size: 3.5rem;
+  }
+
+ }
+
+ @media(min-width: 320px) and (max-width: 568px) {
+   .text-content h2 {
+    font-size: 1.3rem;
+   }
+
+   .text.content h3 {
+    font-size: 1rem;
+  }
+
+  .text-content p {
+    font-size: 0.75rem;
+    max-width: 500px;
+  }
+
+  .menu ul li a {
+    font-size: 0.85rem;
+  }
+
+  .buttons-list {
+    top: 0;
+  }
+
+  .button {
+    margin-top: 1.5em;
+  }
+ }
+
+ @media(min-width: 567px) and (max-width: 824px) and (orientation: landscape) {
+  .content {
+    padding: 1em;
+  }
+  
+  header {
+    padding: 1em;
+  }
+  header .logo {
+    font-size: 22px;
+  }
+  
+  .buttons-list {
+    top: 1em;
+    width: 30px;
+    height: 30px;
+    right: 2em;
+  }
+
+  .text-content h2 {
+    font-size: 1.3rem;
+    padding-top: 1rem;
+  }
+
+  .text-content h3 {
+    font-size: 2rem;
+  }
+
+  .text-content p {
+    font-size: 0.7rem;
+    max-width: 500px;
+  }
+
+  .text-content a {
+    font-size: 0.7rem;
+  }
+
+  .social {
+    bottom: -0.5em;
+  }
+
+  .social li a {
+    transform: scale(0.4);
+  }
+
+  .social li .insta-icon, .social li .twitter-icon {
+    margin-left: 0.5em;
+}
+
+.menu .item-list.active a {
+  font-size: 0.85rem;
+
+}
+
+ }
+
+
+
+
